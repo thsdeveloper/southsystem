@@ -1,0 +1,20 @@
+<div>
+  <div *ngIf="auth.user$ | async as user" class="mold-profile">
+    <div class="mold-profile-info">
+      <div class="image">
+        <img
+          [src]="user.picture"
+          width="80px"
+          alt="User's profile picture"
+          class="rounded-circle img-fluid profile-picture"
+        />
+      </div>
+      <div class="detalhe">
+        <h2 class="nome">Olá {{ user.name }}</h2>
+        <p class="email">{{ user.email }}</p>
+        <app-logout-button></app-logout-button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,5 @@
+<app-login-button *ngIf="(auth.isAuthenticated$ | async) === false"></app-login-button>
+<button mat-button *ngIf="auth.isAuthenticated$ | async" routerLink="/dragoes">Lista de Dragões</button>
+<button mat-button *ngIf="auth.isAuthenticated$ | async" routerLink="/create">Criar Dragão</button>
+<button mat-button *ngIf="auth.isAuthenticated$ | async" routerLink="/profile">Meu Perfil</button>
+<app-logout-button *ngIf="auth.isAuthenticated$ | async"></app-logout-button>

@@ -12,6 +12,17 @@ import { DragaoDetailsComponent } from './components/dragao-details/dragao-detai
 import { DragaoListComponent } from './components/dragao-list/dragao-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthModule } from '@auth0/auth0-angular';
+import { environment as env } from '../environments/environment';
+import { LoginButtonComponent } from './components/login-button/login-button.component';
+import { SignupButtonComponent } from './components/signup-button/signup-button.component';
+import { LogoutButtonComponent } from './components/logout-button/logout-button.component';
+import { AuthenticationButtonComponent } from './components/authentication-button/authentication-button.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatButtonModule} from '@angular/material/button';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { HomeComponent } from './pages/home/home.component';
+import {MatGridListModule} from "@angular/material/grid-list";
 
 
 @NgModule({
@@ -19,9 +30,16 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     DragaoCreateComponent,
     DragaoDetailsComponent,
-    DragaoListComponent
+    DragaoListComponent,
+    LoginButtonComponent,
+    SignupButtonComponent,
+    LogoutButtonComponent,
+    AuthenticationButtonComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
+    MatButtonModule,
     FormsModule,
     HttpClientModule,
     BrowserModule,
@@ -29,7 +47,12 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatSliderModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule,
+    AuthModule.forRoot({
+      ...env.auth,
+    }),
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
